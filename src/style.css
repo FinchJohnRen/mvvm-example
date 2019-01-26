@@ -1,0 +1,90 @@
+body{
+  background: #51965a;
+}
+*::selection {
+  color: rgb(235, 197, 197);
+  background: rgb(111, 197, 223);
+}
+.container > div {
+  font-size: 35px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  background: #666666;
+}
+
+.container > div:nth-child(2n) {
+  background: #336666;
+}
+
+.container > div:nth-child(4n) {
+  background: #f37e70;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  /* grid-template-columns: repeat(3, 20px [col-start]) 5%; */
+  grid-template-rows: 50px 50px;
+  grid-gap: 5px;
+  border: 1px solid #000;
+}
+
+a {
+  color: #fff;
+  background: linear-gradient( red 30%, transparent,blue 20%);
+  transition: all .3s;
+}
+a:hover {
+  background-position: 0 -50px;
+}
+
+.container-2 {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: 100px 500px 100px;
+  grid-gap: 2px 4px;
+}
+.left {
+  grid-column: 1 / 2;
+}
+.main {
+  grid-column: 2 / -2;
+}
+.right {
+  grid-column: -2 / -1;
+}
+.header {
+  grid-column: 2 / -2;
+}
+.footer {
+  grid-column: 2 / -2;
+}
+
+/* 网格区域 */
+
+.container-3 {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: 50px 100px 50px;
+  grid-template-areas: 
+  ". h ."
+  "l m r"
+  ". f ." ;
+  grid-gap: 2px;
+}
+.container-3 .header {
+  grid-area: h;
+}
+.container-3 .left {
+  grid-area: l;
+}
+.container-3 .right {
+  grid-area: r;
+}
+.container-3 .main {
+  grid-area: m;
+}
+.container-3 .footer {
+  grid-area: f;
+}
